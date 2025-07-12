@@ -1,0 +1,46 @@
+@use './variables' as *;
+
+.factCheckResult {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: $secondary-color;
+  border-radius: 10px;
+
+  .statusBadge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    text-transform: capitalize;
+
+    &.real {
+      background-color: #22c55e; // green
+    }
+
+    &.fake {
+      background-color: #ef4444; // red
+    }
+
+    &.opinion {
+      background-color: #eab308; // yellow
+      color: black;
+    }
+
+    &.unknown {
+      background-color: #6b7280; // gray
+    }
+  }
+
+  .description {
+    font-size: 1rem;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  .method {
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+}

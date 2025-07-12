@@ -1,0 +1,16 @@
+@use './variables' as *;
+
+.transcriptDisplay {
+  margin-top: 1.5rem;
+
+  h4 {
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: $text-color;
+  }
+}

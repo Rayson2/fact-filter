@@ -1,0 +1,25 @@
+@use './variables' as *;
+
+.filePreview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: $secondary-color;
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+
+  p {
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  img,
+  video,
+  audio {
+    max-width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+}

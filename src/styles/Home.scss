@@ -1,0 +1,58 @@
+@use './variables' as *;
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 98vh;
+  text-align: center;
+
+  .hero {
+    max-width: 800px;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $text-color;
+      margin-bottom: 0.5rem;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: $text-color;
+      margin-bottom: 1rem;
+    }
+
+    .format-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+
+      .format-button {
+        padding: 0.75rem 1.5rem;
+        background-color: $primary-color;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #3d8ac3;
+        }
+      }
+    }
+  }
+}

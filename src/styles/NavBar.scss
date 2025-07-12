@@ -1,0 +1,132 @@
+@use './variables' as *;
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: $primary-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+
+    .container{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;    
+      
+      .logo {
+      width: 40px;
+      height: auto;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $secondary-color;
+    }
+    }
+
+  }
+
+  .navToggle {
+    background: none;
+    border: none;
+    display: none;
+    cursor: pointer;
+
+    svg {
+      color: $secondary-color;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    a,span {
+      color: $secondary-color;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: color 0.3s;
+
+      
+      &:hover {
+        color: #c5baba;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        min-width: 120px;
+
+        a {
+          padding: 0.5rem 1rem;
+          color: $primary-color;
+          text-align: left;
+
+          &:hover {
+            background: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+
+    a, span {
+      color: black !important;
+    }
+
+    .navToggle {
+      display: block;
+    }
+
+    .navRight {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      transform: translateY(-200%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 999;
+
+      &.open {
+        transform: translateY(0);
+      }
+
+      .dropdownMenu {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@use './variables' as *;
+
+.footer {
+margin-top:2rem;
+  background-color: #d4d3d3;
+  color: $text-color;
+  padding: 2rem 1rem 1rem;
+
+  img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-left {
+      h2 {
+        font-size: 1.6rem;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 400px;
+        color: $text-color;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        a {
+          color: $primary-color;
+          font-size: 1.5rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .footer-middle {
+      h3 {
+        color: $text-color;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 0.5rem;
+
+          a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-right {
+      h3 {
+        color: $text-color;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+
+        a {
+          color: $primary-color;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    color: $text-color;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
