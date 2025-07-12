@@ -6,6 +6,7 @@ import LoadingPopup from '../../components/LoadingPopup';
 import axios from 'axios';
 
 const TextFormat = () => {
+  const apiBase = import.meta.env.VITE_API_BASE_URL;
   const [textInput, setTextInput] = useState('');
   const [source, setSource] = useState('gemini');
   const [factCheckResult, setFactCheckResult] = useState(null);
@@ -21,16 +22,9 @@ const TextFormat = () => {
 
 try {
 const response = await axios.post(
-  `https:/04598e1514c0.ngrok-free.app/fact-check-text`,
-  {
-    text: textInput,
-    source: source,
-  },
-  {
-    headers: {
-      "ngrok-skip-browser-warning": "true"
-    }
-  }
+  `${apiBase}/fact-check-text`,
+  { text: textInput, source },
+  { headers: { "ngrok-skip-browser-warning": "true" } }
 )
 
       const { fact_check } = response.data;

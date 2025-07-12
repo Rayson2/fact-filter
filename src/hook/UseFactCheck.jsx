@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const UseFactCheck = () => {
+  const apiBase = import.meta.env.VITE_API_BASE_URL;
   const [file, setFile] = useState(null);
   const [source, setSource] = useState("gemini");
   const [factCheckResult, setFactCheckResult] = useState(null);
@@ -28,16 +29,16 @@ const UseFactCheck = () => {
     formData.append("source", source); // Must match FastAPI's `source`
 
     try {
-  const res = await axios.post(
-    `https://04598e1514c0.ngrok-free.app/${endpoint}`,
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "ngrok-skip-browser-warning": "true",
-      },
-    }
-  );
+const res = await axios.post(
+  `${apiBase}/${endpoint}`,
+  formData,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      "ngrok-skip-browser-warning": "true",
+    },
+  }
+);
 
 
       const { transcript, fact_check } = res.data;
