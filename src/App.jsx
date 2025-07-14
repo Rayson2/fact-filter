@@ -1,5 +1,5 @@
 import "./index.scss"
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -12,6 +12,14 @@ import AudioFormat from './pages/formats/AudioFormat'
 
 
 const App = () => {
+  const location = useLocation()
+  const currentPath = location.pathname
+
+
+const showAbout =
+  currentPath === '/' || currentPath.startsWith('/format') || currentPath.startsWith('/contact')
+const showContact =
+  currentPath === '/' || currentPath.startsWith('/format') || currentPath.startsWith('/about')
   
   return (
     <>
@@ -25,8 +33,16 @@ const App = () => {
         <Route path="/format/video" element={<VideoFormat />} />
         <Route path="/format/audio" element={<AudioFormat />} />
       </Routes>
-      <About />
-      <Contact />
+            {showAbout && (
+        <>
+          <About />
+        </>
+      )}
+            {showContact && (
+        <>
+          <Contact />
+        </>
+      )}
       <Footer />
     </>
   )
